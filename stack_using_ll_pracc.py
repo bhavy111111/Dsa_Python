@@ -40,6 +40,29 @@ class Stack:
             res = res + s.pop()
         
         print(res)
+    
+    def text_pattern(self,text,pattern):
+        r = Stack()
+        u=Stack()
+
+        for i in text:
+            u.push(i) #HELLO
+
+        for i in pattern:
+            if i == 'u':
+                data = u.pop()
+                r.push(data)
+            
+            else:
+                data = r.pop()
+                u.push(data)
+            res=''
+            while( not u.empty()):
+                res = u.pop() + res
+            
+            print(res)
+            
+
 
     
     def traverse(self):

@@ -1,86 +1,58 @@
-class Atm:
+# #1. Decorators :- Decorator in python is  a function that takes another function as an input , addd some decoration anad returns to it
 
-    def __init__(self):
-        #self.pin = ''
-        self.pin=''
-        #self.balance=0
-        self.balance=0
-        self.menu()
+# def mydecorator(func):
+#     def wrapper():
+#         print('++++')
+#         #print('Hello')
+#         func()
+#     return wrapper
 
-    def menu(self):
-        user_input=input('''
-                    Hello, How would you like to proceed!
-                    1. Enter 1 to create pin
-                    2.Enter 2 to deposit
-                    3.Enter 3 to withdrawl
-                    4.Enter 4 to check the balance
-                    5. Enter 5 to exit
-''')
-        if(user_input=='1'):  
-            #print('Create_pin')
-            self.create_pin()
-        elif(user_input=='2'):
-            self.deposit()
-            #print('deposit_pin')
-        elif(user_input=='3'):
-            self.withrawl()
-            #print('Wkkithraw_pin')
-        elif(user_input=='4'):
-            self.balance()
-            #print('check the balance')
-        else:
-            print('Bye')
-        
-            
+# @mydecorator
+# def hello():
+#     print('Hello')
 
+# h = hello()
+# print(h)
 
-    def create_pin(self):
-        self.pin = input('Enter the pin')
-        print('Pin set successfully')
+# import time
+# def timer(func):
+#     def wrapper(*args):
+#         print('Time taken')
+#         start=time.time()
+#         func(*args)
+#         print('Time Taken',func.__name__,time.time()-start,'secs')
+#     return wrapper
+# @timer
+# def hello():
+#     time.sleep(1)
+#     print('Helo this is bhavehs')
+# @timer
+# def display(num):
+#     time.sleep(3)
+#     return num**2
 
-    def deposit(self):
-        temp=input('Enter the pin')
-        if(temp==self.pin):
-            amount = int(input('eNTER THE AMOUTN'))
-            self.balance = self.balance+amount
-            print('Deposit')
-        else:
-            print('Incorrect pin')
-                             
-
-    def withrawl(self):
-        temp = input('Enter the pin')
-        if(temp==self.pin):
-            amount = int(input('Enter the money'))
-            if(amount < self.balance):
-                self.balance-=amount
-                print('Operation successfully')
-            else:
-                print('Insufficeint')
-        else:
-            print('Invalid')
-    def balance(self):
-        temp=input('Enter the pin')
-        if(temp==self.pin):
-            print(self.balance)
-        else:
-            print('Invalid')
-                             
-            
+# h1=hello()
+# print(h1)
 
 
+# d = display(2)
+# print(d)
 
-sbi=Atm()
-sbi.__balance='6000'
+#Generators are the special form of iterators 
 
-#sbi.create_pin()
+L=[i**2 for i in range(1,10)]
 
+import sys
+print(sys.getsizeof(L))
 
+x = range(10)
+print(sys.getsizeof(x))
 
-
-
-
-
-        
-
-                
+#It will take one memory at a time and dump it before getting the second one
+def gen_demo():
+    yield 'First Comment'
+    yield 'Second Comment'
+    yield 'Third Comment'
+gen = gen_demo()
+for i in gen:
+    print(i)

@@ -89,3 +89,6 @@ print(bubble_sort(arr))
 #Worst Case n^2 - n-1 AP
 #Sorted - Best Case - O(n)
 #By nature Bubble Sort is not adaptive , But by using flag technique we can make it adaptive
+
+
+#Selection Sort

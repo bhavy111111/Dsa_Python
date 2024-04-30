@@ -70,6 +70,8 @@ class Product:
     def buy(self):
         print('Product has been bought')
 
+#In Java We will get an error becoz of ambuiguity , But in Python We use the concept of Method Resolution Order 
+#First Class which is written , that constructor will be callled 
 class SmartPhone(Product,Phone):
     pass
 
